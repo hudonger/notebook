@@ -1,10 +1,11 @@
 import React from 'react';
-import './index.less'
+import PropTypes from 'prop-types';
+import './index.less';
 
 const renderContentList = (items, onTap) => {
   return items.map(item => (
     <section key={item.id} className="content" onClick={() => {onTap(item)}}>
-      <span className="icon iconfont">&#xe67b;</span>
+      <span className={`icon iconfont ${item.icon}`}></span>
       <span className="title">{item.title}</span>
       <span className="price">{item.category.type === 'income' ? '+' : '-'}{item.price}</span>
     </section>
@@ -26,6 +27,15 @@ const PriceList = ({list, onTap}) => {
       }
     </ul>
   )
+}
+
+PriceList.propTypes = {
+  list: PropTypes.array.isRequired,
+  onTap: PropTypes.func.isRequired,
+}
+
+PriceList.defaultProps = {
+  list: []
 }
 
 export default PriceList
