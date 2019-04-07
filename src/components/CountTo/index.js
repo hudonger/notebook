@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import CountUp from 'countup'
+import React, { Component } from 'react';
+import CountUp from 'countup';
 import PropTypes from 'prop-types';
 
 class CountTo extends Component {
@@ -9,23 +9,23 @@ class CountTo extends Component {
       end = 0, // 结束值
       decimals = 2, // 要保留的小数位
       duration = 1, // 动画持续时间
-     } = this.props
+     } = this.props;
 
-    this.counter =  new CountUp(this.props.id, start, end, decimals, duration)
+    this.counter =  new CountUp(this.props.id, start, end, decimals, duration);
   }
 
   componentDidMount () {
-    this.initCounter()
+    this.initCounter();
 
     setTimeout(() => {
       this.counter.start()
-    }, this.props.delay)
+    }, this.props.delay);
   }
 
   componentDidUpdate () {
     setTimeout(() => {
       this.counter.update(this.props.end)
-    }, this.props.delay)
+    }, this.props.delay);
   }
 
   render () {
@@ -35,6 +35,6 @@ class CountTo extends Component {
 
 CountTo.propTypes = {
   end: PropTypes.number.isRequired
-}
+};
 
-export default CountTo
+export default CountTo;

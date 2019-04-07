@@ -1,6 +1,6 @@
 import React from 'react';
 import CountTo from '@/components/CountTo';
-import './index.less'
+import './index.less';
 
 const TotalPrice = ({ income, outcome }) => {
   return (
