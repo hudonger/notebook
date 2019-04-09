@@ -1,0 +1,24 @@
+@import '~@/styles/variable.less';
+
+.category-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background: #fff;
+  .category-header {
+    position: relative;
+    padding-top: 80px;
+    background: @defaultColor;
+    .category-close {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      height: 90px;
+      line-height: 90px;
+      font-size: 32px;
+    }
+  }
+}
