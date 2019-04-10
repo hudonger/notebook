@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Tabs from './components/Tabs';
 import IconList from './components/IconList';
+import { outcomeList, incomeList } from '@/mock';
 import './Category.less';
 
 class Category extends Component {
   state = {
-    currentTab: 'outcome'
+    currentTab: 'outcome',
+    list: outcomeList
   }
 
   handleTabChange = tab => {
     this.setState({
-      currentTab: tab
+      currentTab: tab,
+      list: tab === 'outcome' ? outcomeList : incomeList
     })
   }
 
@@ -28,7 +31,7 @@ class Category extends Component {
             <Link to="/">取消</Link>
           </section>
         </header>
-        <IconList list={[]} onSelect={ this.handleSelect } />
+        <IconList list={this.state.list} onSelect={ this.handleSelect } />
       </section>
     )
   }
