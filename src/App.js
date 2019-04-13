@@ -5,34 +5,43 @@ import Home from './pages/Home/Home';
 import Category from './pages/Category/Category';
 import { CSSTransition } from 'react-transition-group';
 
+export const AppContext = React.createContext();
+
 class App extends Component {
+  state = {
+    
+  }
   render() {
     return (
-      <BrowserRouter>
-        <Fragment>
-          <Route path="/" exact component={ Home } />
-          <Route path="/category">
-            {({match}) => (
-              <CSSTransition
-                in={match !== null}
-                timeout={500}
-                classNames={{
-                  enterActive: 'animated slideInUp',
-                  exitActive: 'animated slideOutDown'
-                }}
-                mountOnEnter
-                unmountOnExit
-              >
-                <Category />
-              </CSSTransition>
-            )}
-          </Route>
-          <TabBar>
-            <TabItem to="/" icon="iconicon--">明细</TabItem>
-            <TabItem to="/category" icon="icontubiao">图表</TabItem>
-          </TabBar>
-        </Fragment>
-      </BrowserRouter>
+      <AppContext.Provider value={{
+        state: this.state
+      }}>
+        <BrowserRouter>
+          <Fragment>
+            <Route path="/" exact component={ Home } />
+            <Route path="/category">
+              {({match}) => (
+                <CSSTransition
+                  in={match !== null}
+                  timeout={500}
+                  classNames={{
+                    enterActive: 'animated slideInUp',
+                    exitActive: 'animated slideOutDown'
+                  }}
+                  mountOnEnter
+                  unmountOnExit
+                >
+                  <Category />
+                </CSSTransition>
+              )}
+            </Route>
+            <TabBar>
+              <TabItem to="/" icon="iconicon--">明细</TabItem>
+              <TabItem to="/category" icon="icontubiao">图表</TabItem>
+            </TabBar>
+          </Fragment>
+        </BrowserRouter>
+      </AppContext.Provider>
     );
   }
 }
