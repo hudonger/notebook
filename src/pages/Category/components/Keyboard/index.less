@@ -1,0 +1,47 @@
+@import '~@/styles/variable.less';
+
+.keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #f2f3f4;
+  border-top: #e3e3e3;
+  .input-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    padding: 0 20px;
+    input {
+      width: 70%;
+      height: 50px;
+      background: #f2f3f4;
+      font-size: 28px;
+    }
+    .total {
+      font-size: 42px;
+    }
+  }
+  table {
+    width: 100%;
+    tr {
+      td {
+        width: 25%;
+        height: 100px;
+        text-align: center;
+        font-size: 32px;
+        border: 1px solid #e3e3e3;
+        .icon {
+          font-size: 42px;
+        }
+      }
+      .date {
+        font-size: 28px;
+      }
+      .complete {
+        background: @defaultColor;
+      }
+    }
+  }
+}

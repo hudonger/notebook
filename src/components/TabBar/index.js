@@ -39,7 +39,7 @@ class TabBar extends Component {
       newChildren.splice(splitIndex, 0, <TabItem key="tabBar-split" />)
     }
     return (
-      <section className="tab-bar" style={{zIndex: 99}}>
+      <section className="tab-bar">
         <section className="add-item">
           <Link to="/category">
             <i className="icon iconfont iconjiahao"></i>

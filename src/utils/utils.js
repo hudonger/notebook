@@ -11,3 +11,9 @@ export const parseToYearAndMonth = str => {
     month: padDate(date.getMonth() + 1)
   }
 }
+
+// 格式化年月日
+export const formatDate = str => {
+  const date = str ? new Date(str) : new Date()
+  return `${date.getFullYear()}/${padDate(date.getMonth() + 1)}/${padDate(date.getDate())}`
+}
