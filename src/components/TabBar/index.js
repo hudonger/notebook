@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './index.less';
 
-export const TabItem = (props) => {
-  const {to = '/', icon, active, onClick} = props
+export const TabItem = props => {
+  const {to = '/', icon, active, onClick} = props;
   const activeStyle = {
     color: active ? '#ffda44' : '#666',
-  }
+  };
 
   return (
     <Link to={to}>
@@ -16,7 +16,7 @@ export const TabItem = (props) => {
       </section>
     </Link>
   )
-}
+};
 
 class TabBar extends Component {
   state = {
@@ -53,6 +53,6 @@ class TabBar extends Component {
 
 TabItem.defaultProps = {
   icon: ''
-}
+};
 
-export default TabBar
+export default TabBar;

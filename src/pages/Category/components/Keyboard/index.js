@@ -62,7 +62,7 @@ class Keyboard extends Component {
   }
 
   handleClick = data => {
-    const { inputValue, total, currentDate } = this.state
+    const { inputValue, total, currentDate } = this.state;
     if (data.type === 'number') { // 点击数字键盘
       if (total.length >= 8) return
       if (total === '' && data.key === '0') return
@@ -75,18 +75,18 @@ class Keyboard extends Component {
       })
     } else if (data.type === 'icon') { // 点击删除按钮
       const list = total.split('')
-      list.pop()
+      list.pop();
       this.setState({
         total: list.join('')
       })
     } else if (data.type === 'back') {
-      this.props.onHide()
+      this.props.onHide();
     } else if (data.type === 'complete') {
       this.props.onComplete({
         content: inputValue,
         price: Number(total),
         date: currentDate
-      })
+      });
     }
   }
 
@@ -110,6 +110,6 @@ class Keyboard extends Component {
       </section>
     )
   }
-}
+};
 
 export default Keyboard;

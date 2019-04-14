@@ -37,7 +37,7 @@ class Category extends Component {
   }
 
   handleComplete = priceData => {
-    const {currentTab, activeItem} = this.state
+    const {currentTab, activeItem} = this.state;
     
     console.log({
       type: currentTab,
@@ -76,6 +76,6 @@ class Category extends Component {
       </section>
     )
   }
-}
+};
 
 export default Category;

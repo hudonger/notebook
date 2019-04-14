@@ -19,6 +19,6 @@ const TotalPrice = ({ income, outcome }) => {
       </section>
     </section>
   )
-}
+};
 
 export default TotalPrice;

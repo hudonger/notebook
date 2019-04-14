@@ -13,7 +13,7 @@ const mapList = (list, active, onSelect) => {
       </li>
     )
   })
-}
+};
 
 const IconList = ({list, active, onSelect}) => {
   return (
@@ -21,6 +21,6 @@ const IconList = ({list, active, onSelect}) => {
       { mapList(list, active, onSelect) }
     </ul>
   )
-}
+};
 
 export default IconList;

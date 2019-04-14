@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContext } from '@/App'
+import { AppContext } from '@/App';
 
 const withContext = Component => {
   return props => (
@@ -7,6 +7,6 @@ const withContext = Component => {
       {data => <Component {...props} data={data} />}
     </AppContext.Consumer>
   )
-}
+};
 
-export default withContext
+export default withContext;

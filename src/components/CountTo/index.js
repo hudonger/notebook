@@ -18,13 +18,13 @@ class CountTo extends Component {
     this.initCounter();
 
     setTimeout(() => {
-      this.counter.start()
+      this.counter.start();
     }, this.props.delay);
   }
 
   componentDidUpdate () {
     setTimeout(() => {
-      this.counter.update(this.props.end)
+      this.counter.update(this.props.end);
     }, this.props.delay);
   }
 

@@ -29,9 +29,9 @@ class Home extends Component {
     showList.forEach(item => {
       item.items.forEach(v => {
         if (v.category.type === 'income') {
-          totalIncome += v.price
+          totalIncome += v.price;
         } else {
-          totalOutcome += v.price
+          totalOutcome += v.price;
         }
       })
     })

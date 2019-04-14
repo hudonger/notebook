@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.less'
+import './index.less';
 
 const Tabs = ({ active, onTabChange }) => {
   return (
@@ -16,6 +16,6 @@ const Tabs = ({ active, onTabChange }) => {
       </section>
     </section>
   )
-}
+};
 
 export default Tabs;

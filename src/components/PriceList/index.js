@@ -10,7 +10,7 @@ const renderContentList = (items, onTap) => {
       <span className="price">{item.category.type === 'income' ? '+' : '-'}{item.price}</span>
     </section>
   ))
-}
+};
 
 const PriceList = ({list, onTap}) => {
   return (
@@ -27,15 +27,15 @@ const PriceList = ({list, onTap}) => {
       }
     </ul>
   )
-}
+};
 
 PriceList.propTypes = {
   list: PropTypes.array.isRequired,
   onTap: PropTypes.func.isRequired,
-}
+};
 
 PriceList.defaultProps = {
   list: []
-}
+};
 
-export default PriceList
+export default PriceList;
