@@ -3,14 +3,31 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import TabBar, { TabItem } from './components/TabBar';
 import Home from './pages/Home/Home';
 import Category from './pages/Category/Category';
+import Detail from './pages/Detail/Detail';
+import axios from 'axios';
 import { CSSTransition } from 'react-transition-group';
 
 export const AppContext = React.createContext();
 
 class App extends Component {
   state = {
-    
+    noteList: [],
+    action: {
+      // 加载列表
+      loadData: () => {
+        axios.get('http://localhost:4000/noteList').then(res => {
+          this.setState({
+            noteList: res.data
+          })
+        })
+      }
+    }
   }
+
+  componentDidMount () {
+    this.state.action.loadData();
+  }
+
   render() {
     return (
       <AppContext.Provider value={{
@@ -19,6 +36,7 @@ class App extends Component {
         <BrowserRouter>
           <Fragment>
             <Route path="/" exact component={ Home } />
+            <Route path="/detail" component={ Detail } />
             <Route path="/category">
               {({match}) => (
                 <CSSTransition

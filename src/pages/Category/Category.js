@@ -5,6 +5,7 @@ import Tabs from './components/Tabs';
 import IconList from './components/IconList';
 import Keyboard from './components/Keyboard';
 import { outcomeList, incomeList } from '@/mock';
+import withContext from '@/components/withContext';
 import './Category.less';
 
 class Category extends Component {
@@ -78,4 +79,4 @@ class Category extends Component {
   }
 };
 
-export default Category;
+export default withContext(Category);

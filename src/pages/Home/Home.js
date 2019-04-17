@@ -3,13 +3,12 @@ import { DatePicker } from 'antd-mobile';
 import TotalPrice from '@/components/TotalPrice';
 import PriceList from '@/components/PriceList';
 import { parseToYearAndMonth } from '@/utils/utils';
-import { noteList } from '@/mock';
+import withContext from '@/components/withContext';
 import './Home.less';
 
 
 class Home extends Component {
   state = {
-    noteList,
     currentDate: new Date()
   }
 
@@ -20,9 +19,11 @@ class Home extends Component {
   }
 
   render () {
-    const { noteList, currentDate } = this.state;
+    const { currentDate } = this.state;
+    const { noteList } = this.props.data.state;
     const { year, month } = parseToYearAndMonth(currentDate);
     const showList = noteList.filter(item => item.date.includes(`${year}-${month}`))
+    console.log(showList)
 
     let totalIncome = 0;
     let totalOutcome = 0;
@@ -66,4 +67,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withContext(Home);
