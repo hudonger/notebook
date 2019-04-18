@@ -74,5 +74,14 @@
         }
       ]
     }
-  ]
+  ],
+  "detail": {
+    "type": "outcome",
+    "category": "food",
+    "icon": "icon92",
+    "name": "餐饮",
+    "price": "200",
+    "date": "2019年5月1日 星期三",
+    "content": "海底捞"
+  }
 }

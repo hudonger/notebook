@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './index.less';
 
 const renderContentList = (items, onTap) => {
   return items.map(item => (
-    <section key={item.id} className="content" onClick={() => {onTap(item)}}>
-      <span className={`icon iconfont ${item.icon}`}></span>
-      <span className="title">{item.title}</span>
-      <span className="price">{item.category.type === 'income' ? '+' : '-'}{item.price}</span>
-    </section>
+    <Link key={item.id} to={`/detail/${item.id}`}>
+      <section className="content" onClick={() => {onTap(item)}}>
+        <span className={`icon iconfont ${item.icon}`}></span>
+        <span className="title">{item.title}</span>
+        <span className="price">{item.category.type === 'income' ? '+' : '-'}{item.price}</span>
+      </section>
+    </Link>
   ))
 };
 

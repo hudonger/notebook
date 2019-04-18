@@ -41,7 +41,12 @@ class TabBar extends Component {
     return (
       <section className="tab-bar">
         <section className="add-item">
-          <Link to="/category">
+          <Link to={{
+            pathname: "category",
+            state: {
+              isEdit: false
+            }
+          }}>
             <i className="icon iconfont iconjiahao"></i>
           </Link>
         </section>

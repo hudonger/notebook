@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import TabBar, { TabItem } from './components/TabBar';
 import Home from './pages/Home/Home';
+import Charts from './pages/Charts/Charts';
 import Category from './pages/Category/Category';
 import Detail from './pages/Detail/Detail';
 import axios from 'axios';
@@ -36,7 +37,8 @@ class App extends Component {
         <BrowserRouter>
           <Fragment>
             <Route path="/" exact component={ Home } />
-            <Route path="/detail" component={ Detail } />
+            <Route path="/charts" component={ Charts } />
+            <Route path="/detail/:id" component={ Detail } />
             <Route path="/category">
               {({match}) => (
                 <CSSTransition
@@ -55,7 +57,7 @@ class App extends Component {
             </Route>
             <TabBar>
               <TabItem to="/" icon="iconicon--">明细</TabItem>
-              <TabItem to="/category" icon="icontubiao">图表</TabItem>
+              <TabItem to="/charts" icon="icontubiao">图表</TabItem>
             </TabBar>
           </Fragment>
         </BrowserRouter>

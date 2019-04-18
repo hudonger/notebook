@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { withRouter } from 'react-router-dom';
 import Tabs from './components/Tabs';
 import IconList from './components/IconList';
 import Keyboard from './components/Keyboard';
@@ -51,6 +52,12 @@ class Category extends Component {
     });
   }
 
+  componentDidMount () {
+    this.setState({
+      showKeyboard: this.props.location.state.isEdit === true
+    })
+  }
+
   render () {
     const { currentTab, list, activeItem } = this.state
     return (
@@ -79,4 +86,4 @@ class Category extends Component {
   }
 };
 
-export default withContext(Category);
+export default withRouter(withContext(Category));

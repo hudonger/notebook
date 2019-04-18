@@ -23,7 +23,6 @@ class Home extends Component {
     const { noteList } = this.props.data.state;
     const { year, month } = parseToYearAndMonth(currentDate);
     const showList = noteList.filter(item => item.date.includes(`${year}-${month}`))
-    console.log(showList)
 
     let totalIncome = 0;
     let totalOutcome = 0;
